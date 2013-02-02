@@ -1,0 +1,205 @@
+#contenedor{
+        background-color:#FFFFFF;
+        width: 100%;
+        height: 100%;
+}
+#cabecera{
+        vertical-align: bottom;
+        background:#0c548b url(/HomeController/images/cabecera.gif) no-repeat top left;
+}
+#cabeceraBotones{
+		margin-left: 400px;
+}
+#menu{
+        background-color:#0c548b;
+        float:left;
+        width:15%;
+        height: 100%;
+        font-size : 9pt;
+		font-family : tahoma,arial;
+}
+#principal{
+        background-color:#FFFFFF;
+        float:right;
+        width:85%;
+}
+#contenidoPrincipal{
+	margin-top: 50px;
+	margin-left: 50px;
+	vertical-align: middle;	
+}
+#ventanaInicio{
+	margin-top: 20px;
+	vertical-align: center;
+	text-align: center;
+}
+#pantalla {
+	margin-top:20px;
+	vertical-align:center;
+	border-color: #0C548B;
+	border-width: 1px;
+	border-style: solid;
+	text-align : left;
+	color : #0C548B;
+	font-size : 9pt;
+	font-family : tahoma,arial;
+	width: 95%;
+}
+#error{
+	margin-top:20px;
+	vertical-align: middle;
+	border:2px solid #cd5c5c;
+	color:#CD5C5C;
+	margin-right: 5%;
+	text-align: center;
+}
+#mensaje{
+	margin-top:20px;
+	vertical-align: middle;
+	border:2px solid #009933;
+	color:#009933;
+	margin-right: 5%;
+	text-align: center;
+}
+#off{
+	float:inherit;
+	color:#CD5C5C;
+}
+#on{
+	float:inherit;
+	color:#009933;
+}
+#menuPrincipal{
+		border-top:2px solid #0c548b; 
+		background-color:#6395D2;
+		color: #FFFFFF;
+		padding-top:5px;
+		padding-bottom:5px;
+}
+#menuSubElemento{
+		background-color:#6395D2;
+		color: #000000;
+		text-align: right;
+		width: 100%;
+		text-decoration: none;
+		border-top:2px solid #0c548b;
+		cursor: hand;
+		margin-top: 5px;
+		margin-bottom: 5px;
+}
+
+#menuSubElemento A:ACTIVE {text-decoration: none;color: #000000;}
+#menuSubElemento A:LINK {text-decoration: none;color: #000000;}
+#menuSubElemento A:VISITED {text-decoration: none;color: #000000;}
+#menuSubElemento A:HOVER {text-decoration: none;color: #FFFFFF;}
+
+A.menuNoSubElemento:ACTIVE {text-decoration: none;color: #FFFFFF;}
+A.menuNoSubElemento:LINK {text-decoration: none;color: #FFFFFF;}
+A.menuNoSubElemento:VISITED {text-decoration: none;color: #FFFFFF;}
+A.menuNoSubElemento:HOVER {text-decoration: none;color: #000000;}
+
+#listaMovimiento{
+		color:#0c548b;
+}
+#controlesH{
+	display: block;
+	color: #000000;
+}
+#aireH{
+	display: block;
+	color: #000000;
+}
+#formularioBusqueda{
+	margin-top: 20px;
+	margin-left: 2.5%;
+	vertical-align: center;
+}
+#formularioPaginacion{
+	margin-left: 2.5%;
+	vertical-align: center;
+	float:left;
+}
+#totalPaginacion{
+	margin-right: 2.5%;
+	text-align: right;
+	right: 2.5%;
+	float: rigth;
+}
+#tablaGenerica{
+	margin-left:2.5%;
+	text-align : left;
+	font-size : 9pt;
+	font-family : tahoma,arial;
+	width: 95%;
+}
+#datopc  { 
+	background-color: #FFFFFF;
+  	color : #0C548B;
+	text-align : left;
+	font-size : 9pt;
+	font-family : tahoma,arial;
+}
+#cabeceraGenerica {
+	background-color: #0C548B;
+    border-width: 1px;
+	border-style: solid;
+	border-color: #6395D2;
+	color : #ffffff;
+	text-align : center;
+	font-weight : bold;
+ 	font-size : 9pt;
+	font-family : tahoma,arial;
+}
+
+#detalleGenerico {  
+	border-width: 1px;
+	border-style: solid;
+	border-color: #6395D2;
+	color : #0c548b;
+	text-align : left;
+	font-size : 8pt;
+	font-family : tahoma,arial;
+}
+#detalleGenerico A:ACTIVE {color: #0c548b;}
+#detalleGenerico A:LINK {color: #0c548b;}
+#detalleGenerico A:VISITED {color: #0c548b;}
+#detalleGenerico A:HOVER {color: #0c548b;}
+
+#btnEncender{
+	background:url(/HomeController/images/Nuevo_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+#btnApagar{
+	background:url(/HomeController/images/Eliminar_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+#btnNuevo{
+	background:url(/HomeController/images/Nuevo_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+#btnEliminar{
+	background:url(/HomeController/images/Eliminar_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+#btnSalir{
+	background:url(/HomeController/images/Salir_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+#btnAceptar{
+	background:url(/HomeController/images/Aceptar_a.gif) no-repeat;
+	border:0p;
+	width: 70px;
+	height: 15px;
+}
+
+

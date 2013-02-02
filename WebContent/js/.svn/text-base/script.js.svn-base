@@ -1,0 +1,46 @@
+function doMenuShow(item) {
+	ocultaMenuTarjetas();
+	ocultaMenuCheques();
+	obj = document.getElementById(item);
+	obj.style.display = "block";
+}
+/*function doMenuHide(item) {
+	ocultaMenuTarjetas();
+	ocultaMenuCheques();
+	obj = document.getElementById(item);
+	obj.style.display = "none";
+}*/
+/*function doMenuClick(item){
+	ocultaMenuTarjetas();
+	ocultaMenuCheques();
+	obj = document.getElementById(item);
+	if(obj.style.display=="none"){
+		obj.style.display="block";
+	}else{
+		obj.style.display="none";
+	}
+}*/
+function ocultaMenuTarjetas(){
+	try {
+		document.getElementById("utilidadesT").style.display= "none";
+		document.getElementById("contabilidadT").style.display= "none";
+		document.getElementById("stockT").style.display= "none";
+		document.getElementById("fotosT").style.display= "none";
+		document.getElementById("listadoProduccionT").style.display= "none";
+		document.getElementById("informesT").style.display= "none";
+		document.getElementById("pedidosProveedoresT").style.display= "none";
+	} catch (e) {
+	}	
+}
+function ocultaMenuCheques(){
+	try {
+		document.getElementById("utilidadesC").style.display= "none";
+		document.getElementById("gestionProduccionC").style.display= "none";
+		document.getElementById("gestionIncidenciasC").style.display= "none";
+		document.getElementById("contabilidadC").style.display= "none";
+		document.getElementById("stockC").style.display= "none";
+		document.getElementById("explotacionDatosC").style.display= "none";
+		document.getElementById("informesC").style.display= "none";
+	} catch (e) {
+	}
+}
