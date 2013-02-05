@@ -55,7 +55,7 @@ public class HomeControllerServlet extends HttpServlet {
 				navegacion.asignaNavegacion(request,response);
 				int accion=navegacion.getAccion();
 				ControlesBo cBo=new ControlesBo();
-				cBo.comprobarStatusTodo(navegacion);
+				//cBo.comprobarStatusTodo(navegacion);
 				switch(accion){
 					case 1:
 						navegacion.setJsp("/inicio.jsp");
