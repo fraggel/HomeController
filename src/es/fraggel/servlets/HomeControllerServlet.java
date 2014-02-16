@@ -1,6 +1,9 @@
 package es.fraggel.servlets;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,13 +14,59 @@ import javax.servlet.http.HttpSession;
 import es.fraggel.beans.NavegacionBean;
 import es.fraggel.bo.ControlesBo;
 import es.fraggel.exception.HCException;
+import gnu.io.CommPortIdentifier;
+import gnu.io.SerialPort;
 
 /**
  * Servlet implementation class HomeControllerServlet
  */
+
 public class HomeControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	SerialPort serial=null;
+	OutputStream out=null;
+	InputStream in=null;
+	private static final String PORT_NAMES[] = { 
+		"/dev/ttyACM0", // Linux
+		"COM3", // Windows
+	};
+  @Override
+    public void init() throws ServletException {
+    	// TODO Auto-generated method stub
+    	super.init();
+    	CommPortIdentifier portIdentifier =null;
+		try {
+			
+				Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
+				while (portEnum.hasMoreElements()) {
+					CommPortIdentifier currPortId = (CommPortIdentifier) portEnum.nextElement();
+					for (String portName : PORT_NAMES) {
+						if (currPortId.getName().equals(portName)) {
+							portIdentifier = currPortId;
+							break;
+						}
+					}
+				}
+				serial = (SerialPort) portIdentifier.open("HomeController",
+						1000);
+				serial.setSerialPortParams(9600,
+						SerialPort.DATABITS_8,
+						SerialPort.STOPBITS_1,
+						SerialPort.PARITY_NONE);
+		        out = serial.getOutputStream();
+		        in=serial.getInputStream();
+	        }catch(Exception e){
+	        	
+	        }
+    }   
+  @Override
+public void destroy() {
+	// TODO Auto-generated method stub
+	super.destroy();
+	if (serial!=null){
+		serial.close();
+	}
+}
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -52,10 +101,13 @@ public class HomeControllerServlet extends HttpServlet {
 				}else{
 					navegacion=(NavegacionBean)session.getAttribute("navegacion");
 				}
+				navegacion.setSerialPort(serial);
+				navegacion.setSerialInputStream(in);
+				navegacion.setSerialOutputStream(out);
 				navegacion.asignaNavegacion(request,response);
 				int accion=navegacion.getAccion();
 				ControlesBo cBo=new ControlesBo();
-				//cBo.comprobarStatusTodo(navegacion);
+				cBo.comprobarStatusTodo(navegacion);
 				switch(accion){
 					case 1:
 						navegacion.setJsp("/inicio.jsp");

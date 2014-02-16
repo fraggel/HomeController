@@ -8,8 +8,8 @@
 </head>
 <body>
 <form method="post" action="LoginServlet">
-	<input type="text" name="usuario" value="Y4608014:003398<"/>
-	<input type="text" name="contrasenya" value="Y4608014:003398<"/>
+	<input type="text" name="usuario" value=""/><br/>
+	<input type="text" name="contrasenya" value=""/></br>
 	<input type="submit"/>
 </form>
 </body>

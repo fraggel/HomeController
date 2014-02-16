@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		try {
 			LoginBo lBo=new LoginBo();
-			UsuarioBean usuarioBean = lBo.login(request.getParameter("usuario"));
+			UsuarioBean usuarioBean = lBo.login(request.getParameter("usuario"),request.getParameter("contrasenya"));
 			session.setAttribute("usuario", usuarioBean);
 			jsp="inicio.jsp";
 		} catch (Exception e) {

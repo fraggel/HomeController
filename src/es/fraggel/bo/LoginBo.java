@@ -11,12 +11,12 @@ public class LoginBo {
 	public LoginBo() {
 	}
 	
-	public UsuarioBean login(String usuario) throws HCException{
+	public UsuarioBean login(String usuario, String contrasenya) throws HCException{
 		try {
 			Parametros parametros=new Parametros();
 			LoginDao loginDao=new LoginDao();
 			SeguridadUtils segUtils=new SeguridadUtils();
-			if(segUtils.comprobarUsuario(usuario)){
+			if(segUtils.comprobarUsuario(usuario,contrasenya)){
 				UsuarioBean usuarioBean = loginDao.login(usuario,parametros);
 				return usuarioBean;
 			}else{

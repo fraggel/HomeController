@@ -1,11 +1,19 @@
 package es.fraggel.beans;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.fraggel.exception.HCException;
+import gnu.io.SerialPort;
 
 public class NavegacionBean {
+	SerialPort serialPort=null;
+	InputStream serialInputStream=null;
+	OutputStream serialOutputStream=null;
+	
 	int accion=-1;
 	int subAccion=-1;
 	int paginacionInicio=0;
@@ -251,6 +259,31 @@ public class NavegacionBean {
 
 	public void setJsp(String jsp) {
 		this.jsp = jsp;
+	}
+
+	public void setSerialPort(SerialPort serial) {
+		this.serialPort=serial;
+		
+	}
+	public SerialPort getSerialPort() {
+		return this.serialPort;
+		
+	}
+
+	public void setSerialInputStream(InputStream in) {
+		this.serialInputStream=in;
+	}
+	public InputStream getSerialInputStream() {
+		return this.serialInputStream;
+	}
+
+	public void setSerialOutputStream(OutputStream out) {
+		this.serialOutputStream=out;
+		
+	}
+	public OutputStream getSerialOutputStream() {
+		return this.serialOutputStream;
+		
 	}
 	
 }

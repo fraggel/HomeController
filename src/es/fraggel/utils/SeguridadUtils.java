@@ -10,9 +10,13 @@ public class SeguridadUtils {
 		valido=true;
 		return valido;
 	}
-	public boolean comprobarUsuario(String usuario){
+	public boolean comprobarUsuario(String usuario, String contrasenya){
 		boolean valido=false;
-		valido=true;
+		if ("fraggel".equals(usuario) && "ak47cold".equals(contrasenya)){
+			valido=true;
+		}else{
+			valido=false;
+		}
 		return valido;
 	}
 }
