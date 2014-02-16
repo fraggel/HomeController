@@ -27,7 +27,6 @@ public class HomeControllerServlet extends HttpServlet {
 	OutputStream out=null;
 	InputStream in=null;
 	private static final String PORT_NAMES[] = { 
-		"/dev/ttyACM0", // Linux
 		"COM3", // Windows
 	};
   @Override
@@ -36,7 +35,6 @@ public class HomeControllerServlet extends HttpServlet {
     	super.init();
     	CommPortIdentifier portIdentifier =null;
 		try {
-			
 				Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
 				while (portEnum.hasMoreElements()) {
 					CommPortIdentifier currPortId = (CommPortIdentifier) portEnum.nextElement();
