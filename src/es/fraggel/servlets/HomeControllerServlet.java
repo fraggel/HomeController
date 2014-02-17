@@ -84,9 +84,9 @@ public void destroy() {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession(false);
+		HttpSession session=request.getSession(true);
 		NavegacionBean navegacion=null;
-		try {
+		/*try {*/
 			//if(session.getAttribute("usuario")!=null){
 
 				/*request.setAttribute("calefaccion",calefaccion);
@@ -118,25 +118,44 @@ public void destroy() {
 						cBo.cambiaStatusAire(navegacion);
 						navegacion.setJsp("/aire.jsp");
 						break;
+					case 4:
+						navegacion.setJsp("/statusC.jsp");
+						cBo.comprobarStatusTodo(navegacion);
+						request.setAttribute("statusC", navegacion.getCalefaccionStatus());
+						request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
+						break;
+					case 5:
+						cBo.cambiaStatusCalefaccion(navegacion);
+						//cBo.comprobarStatusTodo(navegacion);
+						navegacion.setJsp("/statusC.jsp");
+						request.setAttribute("statusC", navegacion.getCalefaccionStatus());
+						request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
+					default:
+						navegacion.setJsp("/calefaccion.jsp");
+						break;
 				}
 			/*}else{
 				navegacion.setJsp("/errorSession.jsp");
 			}*/
 			
-		} catch (Exception e) {
+		/*} catch (Exception e) {
+			e.printStackTrace();
 			request.setAttribute("error","");
 			navegacion.setJsp("/error.jsp");
 		} catch (HCException e) {
 			request.setAttribute("error", e.getMensaje());
 			navegacion.setJsp("/error.jsp");
-		}finally{
-			try {
-				session.setAttribute("navegacion", navegacion);
-				request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
-			}catch(Exception e){
-				request.setAttribute("error","");
-				request.getRequestDispatcher("/errorSession.jsp").forward(request, response);
+		}finally{*/
+			if(accion!=4 & accion!=5){
+				try {
+					session.setAttribute("navegacion", navegacion);
+					request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
+				}catch(Exception e){
+					e.printStackTrace();
+					request.setAttribute("error","");
+					request.getRequestDispatcher("/errorSession.jsp").forward(request, response);
+				}
 			}
-		}
+		/*}*/
 	}
 }

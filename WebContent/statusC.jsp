@@ -1,0 +1,1 @@
+calefaccion=<%=request.getAttribute("statusC")%>

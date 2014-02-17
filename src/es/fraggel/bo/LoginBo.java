@@ -13,12 +13,13 @@ public class LoginBo {
 	
 	public UsuarioBean login(String usuario, String contrasenya) throws HCException{
 		try {
-			Parametros parametros=new Parametros();
-			LoginDao loginDao=new LoginDao();
+			//Parametros parametros=new Parametros();
+			//LoginDao loginDao=new LoginDao();
 			SeguridadUtils segUtils=new SeguridadUtils();
 			if(segUtils.comprobarUsuario(usuario,contrasenya)){
-				UsuarioBean usuarioBean = loginDao.login(usuario,parametros);
-				return usuarioBean;
+				//UsuarioBean usuarioBean = loginDao.login(usuario,parametros);
+				//return usuarioBean;
+				return new UsuarioBean("Pablo","Mateos","ADM");
 			}else{
 				throw new HCException("Error en la comprobación de campos", new Exception());
 			}

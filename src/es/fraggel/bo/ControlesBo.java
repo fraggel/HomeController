@@ -12,7 +12,7 @@ import gnu.io.SerialPort;
 
 public class ControlesBo {
 	
-	public void comprobarStatusTodo(NavegacionBean navegacion) throws HCException{
+	public void comprobarStatusTodo(NavegacionBean navegacion){
 		String status="";
 		try {
 	        InputStream in = navegacion.getSerialInputStream();
@@ -44,7 +44,7 @@ public class ControlesBo {
 		}
 	}
 
-	public void cambiaStatusCalefaccion(NavegacionBean navegacion) throws  HCException {
+	public void cambiaStatusCalefaccion(NavegacionBean navegacion){
 		try{
 			InputStream in = navegacion.getSerialInputStream();
 	        OutputStream out = navegacion.getSerialOutputStream();

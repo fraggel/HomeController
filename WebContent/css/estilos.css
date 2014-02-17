@@ -21,7 +21,7 @@
 #principal{
         background-color:#FFFFFF;
         float:right;
-        width:75%;
+        width:100%;
 }
 #contenidoPrincipal{
 	margin-top: 50px;
@@ -78,9 +78,9 @@
 }
 #menuSubElemento{
 		background-color:#6395D2;
-		font-size:10px;
+		font-size:60pt;
 		color: #000000;
-		text-align: right;
+		text-align: center;
 		width: 100%;
 		text-decoration: none;
 		border-top:3px solid #0c548b;
@@ -169,37 +169,37 @@ A.menuNoSubElemento:HOVER {text-decoration: none;color: #000000;}
 #btnEncender{
 	background:url(/HomeController/images/Nuevo_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 #btnApagar{
 	background:url(/HomeController/images/Eliminar_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 #btnNuevo{
 	background:url(/HomeController/images/Nuevo_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 #btnEliminar{
 	background:url(/HomeController/images/Eliminar_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 #btnSalir{
 	background:url(/HomeController/images/Salir_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 #btnAceptar{
 	background:url(/HomeController/images/Aceptar_a.gif) no-repeat;
 	border:0p;
-	width: 150px;
+	width: 140px;
 	height: 45px;
 }
 

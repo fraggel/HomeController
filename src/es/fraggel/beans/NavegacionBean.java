@@ -25,7 +25,7 @@ public class NavegacionBean {
 	int pagFin=-1;
 	int busqueda=-1;
 	
-	String jsp="/error.jsp";
+	String jsp="/inicio.jsp";
 	boolean calefaccion=false;
 	boolean aireSalon=false;
 	boolean aireHabitacion=false;
@@ -41,9 +41,13 @@ public class NavegacionBean {
 	public NavegacionBean(){
 	}
 
-	public void asignaNavegacion(HttpServletRequest request,HttpServletResponse response) throws HCException{
+	public void asignaNavegacion(HttpServletRequest request,HttpServletResponse response){
 		try {
-			accion=Integer.parseInt(request.getParameter("accion"));
+			if(request.getParameter("accion")!=null){
+				accion=Integer.parseInt(request.getParameter("accion"));
+			}else{
+				accion=1;
+			}
 			if(request.getParameter("subAccion")!=null){
 				subAccion=Integer.parseInt(request.getParameter("subAccion"));
 			}else{
@@ -120,7 +124,7 @@ public class NavegacionBean {
 				aireHabitacion=false;
 			}
 		}catch(Exception e){
-			throw new HCException("Error al tratar parámetros",e);
+			e.printStackTrace();
 		}
 	}
 
