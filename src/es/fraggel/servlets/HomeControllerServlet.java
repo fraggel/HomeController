@@ -122,6 +122,8 @@ public void destroy() {
 						navegacion.setJsp("/statusC.jsp");
 						cBo.comprobarStatusTodo(navegacion);
 						request.setAttribute("statusC", navegacion.getCalefaccionStatus());
+						request.setAttribute("statusAH", navegacion.getAireHabitacionStatus());
+						request.setAttribute("statusAS", navegacion.getAireSalonStatus());
 						request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
 						break;
 					case 5:
@@ -129,7 +131,19 @@ public void destroy() {
 						//cBo.comprobarStatusTodo(navegacion);
 						navegacion.setJsp("/statusC.jsp");
 						request.setAttribute("statusC", navegacion.getCalefaccionStatus());
+						request.setAttribute("statusAH", navegacion.getAireHabitacionStatus());
+						request.setAttribute("statusAS", navegacion.getAireSalonStatus());
 						request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
+						break;
+					case 6:
+						cBo.cambiaStatusAire(navegacion);
+						//cBo.comprobarStatusTodo(navegacion);
+						navegacion.setJsp("/statusC.jsp");
+						request.setAttribute("statusC", navegacion.getCalefaccionStatus());
+						request.setAttribute("statusAH", navegacion.getAireHabitacionStatus());
+						request.setAttribute("statusAS", navegacion.getAireSalonStatus());
+						request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
+						break;
 					default:
 						navegacion.setJsp("/calefaccion.jsp");
 						break;
@@ -146,7 +160,7 @@ public void destroy() {
 			request.setAttribute("error", e.getMensaje());
 			navegacion.setJsp("/error.jsp");
 		}finally{*/
-			if(accion!=4 & accion!=5){
+			if(accion!=4 & accion!=5 & accion!=6){
 				try {
 					session.setAttribute("navegacion", navegacion);
 					request.getRequestDispatcher(navegacion.getJsp()).forward(request, response);
